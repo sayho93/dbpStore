@@ -24,11 +24,14 @@ class UserSVC extends Routable{
 
     function appList(){
         $where = "1=1";
-        if($_REQUEST["categoryId"] != "") $where .= " AND cateoryId = '{$_REQUEST["categoryId"]}";
-        if($_REQUEST["searchTxt"] != "") $where .= " AND `name` LIKE '%{$_REQUEST["searchTxt"]}%'";
+        if($_REQUEST["categoryId"] != "") $where .= " AND categoryId = '{$_REQUEST["categoryId"]}'";
+        if($_REQUEST["searchTxt"] != "") $where .= " AND `appTitle` LIKE '%{$_REQUEST["searchTxt"]}%'";
 
         $sql = "
-            SELECT * FROM tblApp WHERE {$where} ORDER BY regDate DESC
+            SELECT * 
+            FROM tblApp A JOIN tblCorporation C ON A.corporationId = C.id 
+            WHERE {$where} 
+            ORDER BY A.regDate DESC
         ";
 
         return $this->response(1, "succ", $this->getArray($sql));

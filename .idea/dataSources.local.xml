@@ -8,7 +8,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>eVoteDGU</user-name>
+      <user-name>dbpStore</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
   </component>

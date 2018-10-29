@@ -13,7 +13,6 @@ class Routable extends Databases {
     function response($returnCode, $returnMessage, $data = "", $extra = ""){
         $resultJson = Array(
             "api" => $this->lastCall,
-
             "code" => $returnCode,
             "message" => $returnMessage,
             "data" => $data,
