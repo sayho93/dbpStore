@@ -1,9 +1,9 @@
 <?include_once $_SERVER["DOCUMENT_ROOT"]. "/shared/bases/Const.php";?>
+<?include_once $_SERVER["DOCUMENT_ROOT"]. "/shared/public/innerRoute.php";?>
 
 <?
-
-    $list = UserSVC::categoryList();
-    echo json_encode($list);
+    $obj = new UserSVC($_REQUEST);
+    $list = $obj->categoryList();
 
     $CONST_PROJECT_NAME = "풀링폴링";
     $CONST_TITLE_POSTFIX = " :: 깨끗하고 빠른 의견수렴 서비스";
@@ -96,50 +96,12 @@
 
 <div id="wrapper">
     <ul class="sidebar navbar-nav">
-
-
-
-
-        <li class="nav-item active">
-            <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=1">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>게임</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=2">
-                <i class="fas fa-fw fa-child"></i>
-                <span>키즈</span></a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=3">
-                <i class="fas fa-fw fa-heartbeat"></i>
-                <span>건강/운동</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=4">
-                <i class="fas fa-fw fa-book-open"></i>
-                <span>교육</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=5">
-                <i class="fas fa-fw fa-money-bill"></i>
-                <span>금융</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=6">
-                <i class="fas fa-fw fa-sun"></i>
-                <span>날씨</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=7">
-                <i class="fas fa-fw fa-cogs"></i>
-                <span>생산성</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=8">
-                <i class="fas fa-fw fa-comments"></i>
-                <span>소셜</span></a>
-        </li>
+        <?foreach($list["data"] as $item){?>
+            <li class="nav-item active">
+                <a class="nav-link" href="<?=URL_PATH_WEB?>/index.php?categoryId=<?=$item["id"]?>">
+                    <i class="fas fa-fw <?=$item["fa-icon"]?>"></i>
+                    <span>&nbsp;<?=$item["desc"]?>&nbsp;</span>
+                </a>
+            </li>
+        <?}?>
     </ul>

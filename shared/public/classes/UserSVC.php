@@ -15,6 +15,25 @@ class UserSVC extends Routable{
         return $this->response(1, "succ", $this->getArray($sql));
     }
 
+    function categoryInfo(){
+        $sql = "
+            SELECT * FROM tblCategory WHERE `id` = '{$_REQUEST["categoryId"]}' LIMIT 1
+        ";
+        return $this->response(1, "succ", $this->getRow($sql));
+    }
+
+    function appList(){
+        $where = "1=1";
+        if($_REQUEST["categoryId"] != "") $where .= " AND cateoryId = '{$_REQUEST["categoryId"]}";
+        if($_REQUEST["searchTxt"] != "") $where .= " AND `name` LIKE '%{$_REQUEST["searchTxt"]}%'";
+
+        $sql = "
+            SELECT * FROM tblApp WHERE {$where} ORDER BY regDate DESC
+        ";
+
+        return $this->response(1, "succ", $this->getArray($sql));
+    }
+
     function userJoin(){
         $password = $this->encryptAES($_REQUEST["password"]);
         $sql = "

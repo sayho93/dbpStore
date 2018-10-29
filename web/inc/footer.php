@@ -1,68 +1,38 @@
-<!-- Footer -->
-<footer id="footer" class="sm-padding bg-dark">
 
-    <!-- Container -->
-    <div class="container">
-
-        <!-- Row -->
-        <div class="row">
-
-            <div class="col-md-12">
-
-                <!-- footer logo -->
-                <div class="footer-logo">
-                    <a href="index_backup.html"><img src="<?=URL_PATH_WEB?>/img/logo-alt.png" alt="logo"></a>
-                </div>
-                <!-- /footer logo -->
-
-                <!-- footer follow -->
-                <ul class="footer-follow">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-<!--                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>-->
-<!--                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
-<!--                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>-->
-                </ul>
-                <!-- /footer follow -->
-
-                <!-- footer copyright -->
-                <div class="footer-copyright">
-                    <p>Copyright © 2018. All Rights Reserved.</p>
-                </div>
-                <!-- /footer copyright -->
-
-            </div>
-
+<footer class="sticky-footer">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright © Picklecode 2018</span>
         </div>
-        <!-- /Row -->
-
     </div>
-    <!-- /Container -->
-
 </footer>
-<!-- /Footer -->
 
-<!-- Back to top -->
-<div id="back-to-top"></div>
-<!-- /Back to top -->
+</div>
+</div>
 
-<!-- Preloader -->
-<div id="preloader">
-    <div class="preloader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
     </div>
 </div>
-<!-- /Preloader -->
-<!-- jQuery Plugins -->
-<script type="text/javascript" src="<?=URL_PATH_WEB?>/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?=URL_PATH_WEB?>/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="<?=URL_PATH_WEB?>/js/jquery.magnific-popup.js"></script>
-<script type="text/javascript" src="<?=URL_PATH_WEB?>/js/main.js"></script>
 
 </body>
 
 </html>
+
