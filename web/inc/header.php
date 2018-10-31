@@ -8,6 +8,11 @@
     $CONST_PROJECT_NAME = "풀링폴링";
     $CONST_TITLE_POSTFIX = " :: 깨끗하고 빠른 의견수렴 서비스";
 
+    $user = $obj->currentUserInfo();
+//    echo json_encode($user);
+
+echo $user->email;
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -84,10 +89,10 @@
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">Login</a>
-                    <a class="dropdown-item" href="#">Join</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#loginModal">Login</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#joinModal">Join</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                    <a class="dropdown-item jLogout">Logout</a>
                 </div>
             </li>
         </ul>

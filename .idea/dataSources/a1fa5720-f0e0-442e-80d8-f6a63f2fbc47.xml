@@ -1441,18 +1441,20 @@ appId</ColNames>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="354" parent="330" name="userId">
+    <column id="354" parent="330" name="email">
       <Position>2</Position>
       <Comment>User Account</Comment>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="355" parent="330" name="userPw">
+    <column id="355" parent="330" name="password">
       <Position>3</Position>
       <Comment>User Password</Comment>
       <DataType>varchar(512)|0s</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="356" parent="330" name="name">
@@ -1488,21 +1490,28 @@ appId</ColNames>
       <DefaultExpression>&apos;G&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="361" parent="330" name="uptDate">
+    <column id="361" parent="330" name="status">
       <Position>9</Position>
+      <Comment>User status 0:expired 1:valid</Comment>
+      <DataType>tinyint(4)|0s</DataType>
+      <DefaultExpression>1</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="362" parent="330" name="uptDate">
+      <Position>10</Position>
       <Comment>Updated Date</Comment>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>current_timestamp()</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="362" parent="330" name="regDate">
-      <Position>10</Position>
+    <column id="363" parent="330" name="regDate">
+      <Position>11</Position>
       <Comment>Registered Date</Comment>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="363" parent="330" name="PRIMARY">
+    <key id="364" parent="330" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

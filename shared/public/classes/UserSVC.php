@@ -25,7 +25,8 @@ class UserSVC extends Routable{
     function appList(){
         $where = "1=1";
         if($_REQUEST["categoryId"] != "") $where .= " AND categoryId = '{$_REQUEST["categoryId"]}'";
-        if($_REQUEST["searchTxt"] != "") $where .= " AND `appTitle` LIKE '%{$_REQUEST["searchTxt"]}%'";
+        if($_REQUEST["searchTxt"] != "")
+            $where .= " AND (`appTitle` LIKE '%{$_REQUEST["searchTxt"]}%' OR C.desc LIKE '%{$_REQUEST["searchTxt"]}%')";
 
         $sql = "
             SELECT * 
@@ -40,21 +41,23 @@ class UserSVC extends Routable{
     function userJoin(){
         $password = $this->encryptAES($_REQUEST["password"]);
         $sql = "
-            INSERT INTO tblUser(email, password, accessToken, name, nick, phone, status, accessDate, uptDate, regDate)
+            INSERT INTO tblUser(email, password, name, phone, addr, addrDetail, regDate)
             VALUES(
               '{$_REQUEST["email"]}',
               '{$password}',
-              '{$_REQUEST["accessToken"]}',
               '{$_REQUEST["name"]}',
-              '{$_REQUEST["nick"]}',
               '{$_REQUEST["phone"]}',
-              '2',
-              NOW(),
-              NOW(),
+              '{$_REQUEST["addr"]}',
+              '{$_REQUEST["addrDetail"]}',
               NOW()
             )
         ";
         $this->update($sql);
+
+        $sql = "SELECT * FROM tblUser WHERE email = '{$_REQUEST["email"]}' LIMIT 1";
+        $info = $this->getRow($sql);
+
+        PrefUtil::setPreference("pickleUser", $info);
         return $this->response(1, "가입되었습니다.");
     }
 
@@ -66,6 +69,27 @@ class UserSVC extends Routable{
         
         if($cnt < 1) return $this->response(1, "사용 가능한 이메일입니다.");
         else return $this->response(-1, "이미 사용중인 이메일입니다.");
+    }
+
+    function userLogin(){
+        $password = $this->encryptAES($_REQUEST["password"]);
+        $sql = "
+            SELECT * FROM tblUser WHERE `email` = '{$_REQUEST["email"]}' AND password = '{$password}' AND status = 1 LIMIT 1 
+        ";
+        $row = $this->getRow($sql);
+        if($row != ""){
+            PrefUtil::setPreference("pickleUser", $row);
+            return $this->response(1, "succ");
+        }else return $this->response(-1, "failed");
+    }
+
+    function currentUserInfo(){
+        return PrefUtil::getPreference("pickleUser");
+    }
+
+    function userLogout(){
+        PrefUtil::emptyPreference("pickleUser");
+        return $this->response(1, "succ");
     }
 
     function test(){
