@@ -35,8 +35,8 @@ define("DATABASE_PASSWORD", "DATABASE_PASSWORD");
 define("DATABASE_CHARSET", "DATABASE_CHARSET");
 
 //web image path
-define("URL_PATH_WEB", "/web");
-define("URL_PATH_SHARED", "");
+define("URL_PATH_WEB", "URL_PATH_WEB");
+define("URL_PATH_SHARED", "URL_PATH_SHARED");
 
 // PREFIXES
 define("ERROR", "PF_ERROR : ");

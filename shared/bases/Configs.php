@@ -24,6 +24,9 @@ if(!class_exists("Configs")) {
         var $PF_DB_PASSWORD;
         var $PF_DB_CHARSET;
 
+        var $PF_URL_PATH_WEB;
+        var $PF_URL_PATH_SHARED;
+
 		function __construct(){
         	$this->init();
         }
@@ -34,6 +37,7 @@ if(!class_exists("Configs")) {
              * @changeable true
              */
             $this->CONFIG_MODE = CONDUCT_MODE_DEV;
+//            $this->CONFIG_MODE = CONDUCT_MODE_TEST;
             $this->CONFIG = array(
                 CONDUCT_MODE_DEV => array(
                     /**
@@ -53,7 +57,10 @@ if(!class_exists("Configs")) {
                     DATABASE_NAME => "dbp_store",
                     DATABASE_USER => "dbpStore",
                     DATABASE_PASSWORD => "dbpStore1234",
-                    DATABASE_CHARSET => "utf8"
+                    DATABASE_CHARSET => "utf8",
+
+                    URL_PATH_WEB => "/web",
+                    URL_PATH_SHARED => ""
                 ),
                 CONDUCT_MODE_TEST => array(
                     /**
@@ -73,7 +80,10 @@ if(!class_exists("Configs")) {
                     DATABASE_NAME => "dbp_store",
                     DATABASE_USER => "dbpStore",
                     DATABASE_PASSWORD => "dbpStore1234",
-                    DATABASE_CHARSET => "utf8"
+                    DATABASE_CHARSET => "utf8",
+
+                    URL_PATH_WEB => "/AppStore/web",
+                    URL_PATH_SHARED => "/AppStore"
                 ),
                 CONDUCT_MODE_LIVE => array(
                     /**
@@ -93,7 +103,10 @@ if(!class_exists("Configs")) {
                     DATABASE_NAME => "dbp_store",
                     DATABASE_USER => "dbpStore",
                     DATABASE_PASSWORD => "dbpStore1234",
-                    DATABASE_CHARSET => "utf8"
+                    DATABASE_CHARSET => "utf8",
+
+                    URL_PATH_WEB => "/web",
+                    URL_PATH_SHARED => ""
                 )
             );
 
@@ -114,6 +127,8 @@ if(!class_exists("Configs")) {
             $this->PF_DB_USER = $this->CONFIG[$this->CONFIG_MODE][DATABASE_USER];
             $this->PF_DB_PASSWORD = $this->CONFIG[$this->CONFIG_MODE][DATABASE_PASSWORD];
             $this->PF_DB_CHARSET = $this->CONFIG[$this->CONFIG_MODE][DATABASE_CHARSET];
+            $this->PF_URL_PATH_WEB = $this->CONFIG[$this->CONFIG_MODE][URL_PATH_WEB];
+            $this->PF_URL_PATH_SHARED = $this->CONFIG[$this->CONFIG_MODE][URL_PATH_SHARED];
 		}
 	}
 }
