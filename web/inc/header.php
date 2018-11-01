@@ -48,13 +48,12 @@
 <script>
     $.fn.enterHandle = function(object){
         $(this).bind("keypress", function(e){
-            console.log(object);
             if(e.keyCode === 13) object.trigger("click");
         })
     };
 
     $(document).ready(function(){
-        
+
     });
 
 </script>

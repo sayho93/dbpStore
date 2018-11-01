@@ -10,11 +10,14 @@
         });
 
         $("#loginForm [name=email], #loginForm [name=password]").enterHandle($(".jLogin"));
+        $("#joinForm [name=email], #joinForm [name=password], #joinForm [name=name], #joinForm [name=phone], #joinForm [name=addr], #joinForm [name=addrDetail]")
+            .enterHandle($(".jJoin"));
+
 
         var check = -1;
 
         $(".jCheckEmail").click(function(){
-            var email = $("[name=email]").val();
+            var email = $("#joinForm [name=email]").val();
             if(email == "" || email == null){
                 alert("이메일 입력 후 시도해 주시기 바랍니다.");
                 return;
@@ -35,6 +38,19 @@
         });
 
         $(".jJoin").click(function(){
+            var params = new Array();
+            params.push($("#joinForm [name=email]").val());
+            params.push($("#joinForm [name=password]").val());
+            params.push($("#joinForm [name=name]").val());
+            params.push($("#joinForm [name=phone]").val());
+            params.push($("#joinForm [name=addr]").val());
+            params.push($("#joinForm [name=addrDetail]").val());
+
+            if(isEmpty(params)){
+                alert("필요한 모든 정보를 입력해 주시기 바랍니다.");
+                return;
+            }
+
             if(check !== 1){
                 alert("이메일 중복 확인 후 시도해 주시기 바랍니다.");
                 return;
@@ -52,6 +68,14 @@
         });
 
         $(".jLogin").click(function(){
+            var params = new Array();
+            params.push($("#loginForm [name=email]").val());
+            params.push($("#loginForm [name=password]").val());
+            if(isEmpty(params)){
+                alert("아이디 비밀번호를 입력 후 시도해 주시기 바랍니다.");
+                return;
+            }
+
             var ajax = new AjaxSubmit("<?=$CONST_URL_SHARED?>/shared/public/route.php?F=UserSVC.userLogin", "post", true, "json", "#loginForm");
             ajax.send(function(data){
                 if(data.code === 1){
