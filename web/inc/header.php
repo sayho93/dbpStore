@@ -1,7 +1,5 @@
 <?
-    include_once $_SERVER["DOCUMENT_ROOT"].  "/shared/bases/Configs.php";
-    $conf = new Configs();
-    include_once $_SERVER["DOCUMENT_ROOT"]. $conf->PF_URL_PATH_SHARED . "/shared/public/innerRoute.php";
+    include_once $_SERVER["DOCUMENT_ROOT"] . "/shared/public/innerRoute.php";
     $introPress = new innerRoute();
 ?>
 
@@ -9,8 +7,8 @@
     $obj = new UserSVC($_REQUEST);
     $list = $obj->categoryList();
 
-    $CONST_URL_WEB = $conf->PF_URL_PATH_WEB;
-    $CONST_URL_SHARED = $conf->PF_URL_PATH_SHARED;
+    $CONST_URL_WEB = $introPress->PF_URL_PATH_WEB;
+    $CONST_URL_SHARED = $introPress->PF_URL_PATH_SHARED;
 
     $CONST_PROJECT_NAME = "AppStore";
     $CONST_TITLE_POSTFIX = " :: 깨끗하고 빠른 의견수렴 서비스";
@@ -29,7 +27,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Dashboard</title>
+    <title>AppStore</title>
 
     <link href="<?=$CONST_URL_WEB?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=$CONST_URL_WEB?>/css/sb-admin.css" rel="stylesheet">
@@ -45,25 +43,20 @@
     <script type="text/javascript" src="<?=$CONST_URL_SHARED?>/shared/modules/sehoMap/sehoMap.js"></script>
     <script type="text/javascript" src="<?=$CONST_URL_SHARED?>/shared/modules/utils/PValidation.js"></script>
     <script type="text/javascript" src="<?=$CONST_URL_SHARED?>/shared/modules/valueSetter/sayhoValueSetter.js"></script>
-
-
-
 </head>
 
 <script>
+    $.fn.enterHandle = function(object){
+        $(this).bind("keypress", function(e){
+            console.log(object);
+            if(e.keyCode === 13) object.trigger("click");
+        })
+    };
+
     $(document).ready(function(){
-        initProcess();
-
-
-        function initProcess(){
-            var ajax = new AjaxSender("<?=$CONST_URL_SHARED?>/shared/public/route.php?F=UserSVC.categoryList", false, "json", new sehoMap());
-            ajax.send(function(data){
-                if(data.code !== 1){
-                    alert("데이터 로드중 오류가 발생하였습니다.");
-                }
-            });
-        }
+        
     });
+
 </script>
 
 <body id="page-top">
@@ -98,8 +91,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <?if($user  == ""){?>
-                        <a class="dropdown-item" data-toggle="modal" data-target="#loginModal">로그인</a>
-                        <a class="dropdown-item" data-toggle="modal" data-target="#joinModal">회원가입</a>
+                        <a class="dropdown-item jToLogin" data-toggle="modal" data-target="#loginModal">로그인</a>
+                        <a class="dropdown-item jToJoin" data-toggle="modal" data-target="#joinModal">회원가입</a>
                     <?}else{?>
                         <a class="dropdown-item jLogout">로그아웃</a>
                     <?}?>

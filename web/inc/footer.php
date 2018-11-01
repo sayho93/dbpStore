@@ -1,7 +1,16 @@
 <script src="<?=$CONST_URL_WEB?>/js/sb-admin.min.js"></script>
 <script>
-
     $(document).ready(function(){
+        $("#loginModal").on('shown.bs.modal', function(){
+            $("#loginForm [name=email]").trigger('focus')
+        });
+
+        $("#joinModal").on('shown.bs.modal', function(){
+            $("#joinForm [name=email]").trigger('focus')
+        });
+
+        $("#loginForm [name=email], #loginForm [name=password]").enterHandle($(".jLogin"));
+
         var check = -1;
 
         $(".jCheckEmail").click(function(){

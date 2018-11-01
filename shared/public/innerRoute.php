@@ -1,4 +1,6 @@
 <?php
+chdir(__DIR__);
+include_once "../bases/Configs.php";
 
 class innerRoute extends Configs{
     function __construct(){
