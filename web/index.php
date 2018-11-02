@@ -1,8 +1,7 @@
 <?include_once "inc/header.php";?>
 <?
-    $categoryInfo = $obj->categoryInfo();
-
-    $appList = $obj->appList();
+    $categoryInfo = $userSVC->categoryInfo();
+    $appList = $userSVC->appList();
 ?>
 
 <script>

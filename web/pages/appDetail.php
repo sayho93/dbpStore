@@ -8,7 +8,9 @@
 ?>
 
 <?include_once "../inc/header.php";?>
-
+<?
+    $appData = $userSVC->
+?>
 <script>
     $(document).ready(function(){
 

@@ -9,7 +9,8 @@
             $("#joinForm [name=email]").trigger('focus')
         });
 
-        $("#loginForm [name=email], #loginForm [name=password]").enterHandle($(".jLogin"));
+        $("#loginForm [name=email], #loginForm [name=password]")
+            .enterHandle($(".jLogin"));
         $("#joinForm [name=email], #joinForm [name=password], #joinForm [name=name], #joinForm [name=phone], #joinForm [name=addr], #joinForm [name=addrDetail]")
             .enterHandle($(".jJoin"));
 
@@ -18,6 +19,12 @@
 
         $(".jCheckEmail").click(function(){
             var email = $("#joinForm [name=email]").val();
+
+            if(verifyEmail(email) === false){
+                alert("올바른 형식의 이메일을 입력해 주시기 바랍니다.");
+                return;
+            }
+
             if(email == "" || email == null){
                 alert("이메일 입력 후 시도해 주시기 바랍니다.");
                 return;

@@ -4,8 +4,8 @@
 ?>
 
 <?
-    $obj = new UserSVC($_REQUEST);
-    $list = $obj->categoryList();
+    $userSVC = new UserSVC($_REQUEST);
+    $list = $userSVC->categoryList();
 
     $CONST_URL_WEB = $introPress->PF_URL_PATH_WEB;
     $CONST_URL_SHARED = $introPress->PF_URL_PATH_SHARED;
@@ -13,7 +13,7 @@
     $CONST_PROJECT_NAME = "AppStore";
     $CONST_TITLE_POSTFIX = " :: 깨끗하고 빠른 의견수렴 서비스";
 
-    $user = $obj->currentUserInfo();
+    $user = $userSVC->currentUserInfo();
 
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>AppStore</title>
+    <title><?=$CONST_PROJECT_NAME?></title>
 
     <link href="<?=$CONST_URL_WEB?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=$CONST_URL_WEB?>/css/sb-admin.css" rel="stylesheet">
@@ -52,6 +52,12 @@
         })
     };
 
+    function verifyEmail(email){
+        var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+        if (email.match(regExp) != null) return true;
+        else return false;
+    }
+
     $(document).ready(function(){
 
     });
@@ -62,7 +68,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="<?=$CONST_URL_WEB?>">AppStore</a>
+    <a class="navbar-brand mr-1" href="<?=$CONST_URL_WEB?>"><?=$CONST_PROJECT_NAME?></a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
