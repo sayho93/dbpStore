@@ -63,15 +63,36 @@ class UserSVC extends Routable{
 
     function appInfo(){
         $sql = "
-            SELECT * FROM tblApp WHERE id = '{$_REQUEST["id"]}' LIMIT 1
+            SELECT 
+              *, 
+              A.regDate AS appRegDate,
+              (SELECT `desc` FROM tblCategory WHERE id = A.categoryId) AS category,
+              (
+                SELECT (SUM(rate) / COUNT(*))
+                FROM tblCommentParent CP JOIN tblUser U ON CP.userId = U.id 
+                JOIN tblApp A ON CP.appId = A.id JOIN tblComment C ON C.commentPid = CP.id
+                WHERE appId = '1' AND C.id = (SELECT MAX(id) FROM tblComment WHERE commentPid = CP.id LIMIT 1)
+              ) AS average,
+              (
+                SELECT COUNT(*)
+                FROM tblCommentParent CP JOIN tblUser U ON CP.userId = U.id 
+                JOIN tblApp A ON CP.appId = A.id JOIN tblComment C ON C.commentPid = CP.id
+                WHERE appId = '1' AND C.id = (SELECT MAX(id) FROM tblComment WHERE commentPid = CP.id LIMIT 1)
+              ) AS cnt
+            FROM tblApp A JOIN tblCorporation C ON A.corporationId = C.id
+            WHERE A.id = '{$_REQUEST["id"]}' LIMIT 1
         ";
         $appData = $this->getRow($sql);
+
         $sql = "
-            SELECT *, (SELECT COUNT(*) FROM tblLike WHERE commentId = C.id) AS likeCnt 
-            FROM tblComment C JOIN tblUser U ON C.userId = U.id
-            WHERE C.appId = '{$_REQUEST["id"]}' 
+            SELECT *
+            FROM tblCommentParent CP JOIN tblUser U ON CP.userId = U.id 
+            JOIN tblApp A ON CP.appId = A.id JOIN tblComment C ON C.commentPid = CP.id
+            WHERE appId = '1' AND C.id = (SELECT MAX(id) FROM tblComment WHERE commentPid = CP.id LIMIT 1)
         ";
         $commentList = $this->getArray($sql);
+
+        return $this->response(1, "succ", $appData, $commentList);
     }
 
     function checkEmail(){

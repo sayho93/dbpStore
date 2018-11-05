@@ -37,6 +37,9 @@
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="<?=$CONST_URL_WEB?>/js/bootstrap.min.js"></script>
 
+    <link href="<?=$CONST_URL_WEB?>/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="<?=$CONST_URL_WEB?>/js/star-rating.js"></script>
+
 
 
     <script type="text/javascript" src="<?=$CONST_URL_SHARED?>/shared/modules/ajaxCall/ajaxClass.js"></script>
