@@ -61,6 +61,19 @@ class UserSVC extends Routable{
         return $this->response(1, "가입되었습니다.");
     }
 
+    function appInfo(){
+        $sql = "
+            SELECT * FROM tblApp WHERE id = '{$_REQUEST["id"]}' LIMIT 1
+        ";
+        $appData = $this->getRow($sql);
+        $sql = "
+            SELECT *, (SELECT COUNT(*) FROM tblLike WHERE commentId = C.id) AS likeCnt 
+            FROM tblComment C JOIN tblUser U ON C.userId = U.id
+            WHERE C.appId = '{$_REQUEST["id"]}' 
+        ";
+        $commentList = $this->getArray($sql);
+    }
+
     function checkEmail(){
         $sql = "
             SELECT COUNT(*) cnt FROM tblUser WHERE email = '{$_REQUEST["email"]}' AND status != 0 LIMIT 1
