@@ -94,15 +94,21 @@ $commentList = $appData["extra"];
         <div class="row">
             <?foreach($commentList as $commentItem){?>
                 <div class="container h-100 ml-5 mr-5 mb-3">
-                    <div class="col-xl-2 col-sm-3 p-0">
-                        <p class="mb-1">
-                            <?=$commentItem["name"]?>
-                            <a class="small font-weight-light ml-1"><?=$commentItem["regDate"]?></a>
-                        </p>
-                        <div class="rating mr-5" data-rate-value="<?=$commentItem["rate"]?>"></div>
-                    </div>
-                    <div class="col">
-                        asd
+                    <div class="row">
+                        <div class="col-xl-2 col-sm-3 p-0">
+                            <p class="mb-1">
+                                <?=$commentItem["name"]?>
+                                <a class="small font-weight-light ml-1"><?=$commentItem["regDate"]?></a>
+                            </p>
+                            <div class="rating mr-5" data-rate-value="<?=$commentItem["rate"]?>"></div>
+                        </div>
+
+                        <div class="col">
+                            <div class="float-right h-100">
+                                <i class="far fa-thumbs-up" style="font-size: 1.5em;"></i>
+                                <i class="fas fa-thumbs-up" style="font-size: 1.5em;"></i>
+                            </div>
+                        </div>
                     </div>
 
                     <div>
