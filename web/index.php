@@ -41,5 +41,4 @@
 
     </div>
 </div>
-
-<?include_once "inc/footer.php"?>
+<?include_once $_SERVER["DOCUMENT_ROOT"] . $CONST_URL_WEB . "/inc/footer.php";?>
