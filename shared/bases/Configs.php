@@ -59,6 +59,7 @@ if(!class_exists("Configs")) {
                     DATABASE_PASSWORD => "dbpStore1234",
                     DATABASE_CHARSET => "utf8",
 
+                    //TODO modify PATH
                     URL_PATH_WEB => "/web",
                     URL_PATH_SHARED => ""
                 ),

@@ -85,7 +85,11 @@ class UserSVC extends Routable{
         $appData = $this->getRow($sql);
 
         $sql = "
-            SELECT *
+            SELECT 
+              *,
+              CASE WHEN (SELECT COUNT(*) FROM tblLike WHERE userId = U.id AND commentPId = CP.id) > 0 THEN 1
+              ELSE 0
+              END AS likeFlag
             FROM tblCommentParent CP JOIN tblUser U ON CP.userId = U.id 
             JOIN tblApp A ON CP.appId = A.id JOIN tblComment C ON C.commentPid = CP.id
             WHERE appId = '1' AND C.id = (SELECT MAX(id) FROM tblComment WHERE commentPid = CP.id LIMIT 1)
@@ -146,6 +150,32 @@ class UserSVC extends Routable{
 
     function downloadApp(){
 
+    }
+
+    function setLike(){
+        $user = PrefUtil::getPreference("pickleUser");
+        if($user == "" || $user == null) return $this->response(-1, "로그인 후 이용해 주시기 바랍니다.");
+        if($_REQUEST["flag"] == "false"){
+            $sql = "
+              INSERT INTO tblLike(userId, commentPId, regDate)
+              VALUES(
+                '{$user->id}',
+                '{$_REQUEST["commentPId"]}',
+                NOW()
+              )
+              ON DUPLICATE KEY UPDATE
+              regDate = NOW()
+            ";
+        }
+        else{
+            $sql = "
+                DELETE FROM tblLike
+                WHERE userId = '{$user->id}' AND commentPId = '{$_REQUEST["commentPId"]}'
+            ";
+        }
+
+        $this->update($sql);
+        return $this->response(1, "succ");
     }
 
     function test(){

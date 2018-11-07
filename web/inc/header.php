@@ -1,4 +1,5 @@
 <?
+    //TODO modify include PATH
     include_once $_SERVER["DOCUMENT_ROOT"] . "/shared/public/innerRoute.php";
     $introPress = new innerRoute();
 ?>
@@ -28,16 +29,13 @@
     <meta name="author" content="">
 
     <title><?=$CONST_PROJECT_NAME?></title>
-
     <link href="<?=$CONST_URL_WEB?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=$CONST_URL_WEB?>/css/sb-admin.css" rel="stylesheet">
     <link href="<?=$CONST_URL_WEB?>/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
 
     <script src="<?=$CONST_URL_WEB?>/js/jquery.min.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script src="<?=$CONST_URL_WEB?>/js/bootstrap.min.js"></script>
-
-
+    <script src="<?=$CONST_URL_WEB?>/js/bootstrap.bundle.js"></script>
 
     <script type="text/javascript" src="<?=$CONST_URL_SHARED?>/shared/modules/ajaxCall/ajaxClass.js"></script>
     <script type="text/javascript" src="<?=$CONST_URL_SHARED?>/shared/modules/sehoMap/sehoMap.js"></script>

@@ -8,12 +8,11 @@
 ?>
 <?include_once "../inc/header.php";?>
 <?
-$appData = $userSVC->appInfo();
+    $appData = $userSVC->appInfo();
 
-$data = $appData["data"];
-$commentList = $appData["extra"];
+    $data = $appData["data"];
+    $commentList = $appData["extra"];
 ?>
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
     <script src="<?=$CONST_URL_WEB?>/js/rater.js"></script>
 
     <script>
@@ -26,6 +25,29 @@ $commentList = $appData["extra"];
             }
 
             $(".rating").rate(options);
+
+            $(".jLike").click(function(){
+                var currentItem = $(this);
+                var commentPId = $(this).attr("pid");
+                var flag = $(this).attr("flag");
+                var ajax = new AjaxSender("<?=$CONST_URL_SHARED?>/shared/public/route.php?F=UserSVC.setLike", false, "json",
+                new sehoMap().put("commentPId", commentPId).put("flag", flag));
+                ajax.send(function(data){
+                    if(data.code === 1){
+                        if(flag === "true"){
+                            $(currentItem).removeClass("fas");
+                            $(currentItem).addClass("far");
+                            $(currentItem).attr("flag", "false");
+                        }
+                        else{
+                            $(currentItem).removeClass("far");
+                            $(currentItem).addClass("fas");
+                            $(currentItem).attr("flag", "true");
+                        }
+                    }
+                    else alert(data.message);
+                });
+            });
 
             $(".jWish").click(function(){
                 var ajax = new AjaxSender("<?=$CONST_URL_SHARED?>/shared/public/route.php?F=UserSVC.setWishItem", false, "json",
@@ -105,8 +127,14 @@ $commentList = $appData["extra"];
 
                         <div class="col">
                             <div class="float-right h-100">
-                                <i class="far fa-thumbs-up" style="font-size: 1.5em;"></i>
-                                <i class="fas fa-thumbs-up" style="font-size: 1.5em;"></i>
+                                <i class="<?=$commentItem["likeFlag"] == 1 ? "fas" : "far"?> fa-thumbs-up jLike mr-3" pid="<?=$commentItem["commentPId"]?>" flag="<?=$commentItem["likeFlag"] == 1 ? "true" : "false"?>" style="font-size: 1.5em;"></i>
+                                <i class="fa fa-ellipsis-v" data-toggle="dropdown"></i>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+
                             </div>
                         </div>
                     </div>
