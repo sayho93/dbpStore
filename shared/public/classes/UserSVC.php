@@ -126,6 +126,28 @@ class UserSVC extends Routable{
         return $this->response(1, "succ");
     }
 
+    function setWishItem(){
+        $user = PrefUtil::getPreference("pickleUser");
+
+        if($user == "" || $user == null) return $this->response(-1, "로그인 후 이용해 주시기 바랍니다.");
+        $sql = "
+            INSERT INTO tblWishList(userId, appId, regDate)
+            VALUES(
+              '{$user->id}',
+              '{$_REQUEST["appId"]}',
+              NOW()
+            )
+            ON DUPLICATE KEY UPDATE
+              regDate = NOW()
+        ";
+        $this->update($sql);
+        return $this->response(1, "succ");
+    }
+
+    function downloadApp(){
+
+    }
+
     function test(){
         $str = "test111";
         $encrypted = $this->encryptAES($str);
