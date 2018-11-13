@@ -19,7 +19,6 @@ class Routable extends Databases {
             "data" => $data,
             "extra" => $extra
         );
-
         return ($resultJson);
     }
 
@@ -50,6 +49,57 @@ class Routable extends Databases {
     function decryptAES($str){
         $res = openssl_decrypt($str, "AES-256-CBC", AES_KEY_256, 0, AES_KEY_256);
         return $res;
+    }
+
+    function makeFileName(){
+        srand((double)microtime()*1000000);
+        $Rnd = rand(1000000,2000000);
+        $Temp = date("Ymdhis");
+        return $Temp.$Rnd;
+    }
+
+
+    //TODO file upload sample source
+    function upsertDoc(){
+        $check = file_exists($_FILES['docFile']['tmp_name']);
+
+        $id = $_REQUEST["id"];
+        $adminId = $this->admUser->id;
+        $title = $_REQUEST["title"];
+        $content = $_REQUEST["content"];
+        if($id == "") $id = 0;
+
+        $fileName = $_REQUEST["fileName"];
+        $filePath = $_REQUEST["filePath"];
+
+        if($check !== false){
+            $fName = $this->makeFileName() . "." . pathinfo(basename($_FILES["docFile"]["name"]),PATHINFO_EXTENSION);
+            $targetDir = $this->filePath . $fName;
+            $fileName = $_FILES["docFile"]["name"];
+            if(move_uploaded_file($_FILES["docFile"]["tmp_name"], $targetDir)) $filePath = $fName;
+            else return $this->makeResultJson(-1, "fail");
+        }
+
+        $sql = "INSERT INTO tblDocument(`id`, `adminId`, `title`, `fileName`, `filePath`, `content`, `regDate`)
+                    VALUES(
+                      '{$id}', 
+                      '{$adminId}', 
+                      '{$title}', 
+                      '{$fileName}',
+                      '{$filePath}',
+                      '{$content}',
+                      NOW()
+                    )
+                    ON DUPLICATE KEY UPDATE 
+                      `title` = '{$title}', 
+                      `adminId`='{$adminId}', 
+                      `content` = '{$content}',
+                      `fileName` = '{$fileName}',
+                      `filePath` = '{$filePath}'
+                  ";
+
+        $this->update($sql);
+        return $this->makeResultJson(1, "");
     }
 
 }
