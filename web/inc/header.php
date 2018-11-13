@@ -15,7 +15,6 @@
     $CONST_TITLE_POSTFIX = " :: 깨끗하고 빠른 의견수렴 서비스";
 
     $user = $userSVC->currentUserInfo();
-
 ?>
 <!DOCTYPE html>
 <html lang="ko">

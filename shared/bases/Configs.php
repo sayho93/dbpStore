@@ -43,7 +43,7 @@ if(!class_exists("Configs")) {
                     /**
                      * File Paths for DEV MODE
                      */
-                    URL_PATH => PF_DEFAULT,
+                    URL_PATH => "/uploadFiles",
                     URL_DISPLAY_PATH => PF_DEFAULT,
                     URL_PATH_100 => PF_DEFAULT,
                     URL_PATH_320 => PF_DEFAULT,

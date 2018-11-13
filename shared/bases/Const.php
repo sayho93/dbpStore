@@ -51,6 +51,3 @@ define("AES_KEY", "pickle931018950503!!pickle931018");
 define("AES_KEY_128", substr(AES_KEY, 0, 128 / 8));
 define("AES_KEY_256", substr(AES_KEY, 0, 256 / 8));
 
-
-?>
-
