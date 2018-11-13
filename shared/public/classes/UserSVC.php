@@ -62,6 +62,8 @@ class UserSVC extends Routable{
     }
 
     function appInfo(){
+        $user = PrefUtil::getPreference("pickleUser");
+
         $sql = "
             SELECT 
               *, 
@@ -87,7 +89,7 @@ class UserSVC extends Routable{
         $sql = "
             SELECT 
               *,
-              CASE WHEN (SELECT COUNT(*) FROM tblLike WHERE userId = U.id AND commentPId = CP.id) > 0 THEN 1
+              CASE WHEN (SELECT COUNT(*) FROM tblLike WHERE userId = '{$user->id}' AND commentPId = CP.id) > 0 THEN 1
               ELSE 0
               END AS likeFlag
             FROM tblCommentParent CP JOIN tblUser U ON CP.userId = U.id 
