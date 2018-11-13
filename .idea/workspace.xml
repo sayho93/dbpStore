@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4a1d25b-4d7c-46be-91ce-59dc5a1ace2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/shared/public/classes/UserSVC.php" beforeDir="false" afterPath="$PROJECT_DIR$/shared/public/classes/UserSVC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/bases/Configs.php" beforeDir="false" afterPath="$PROJECT_DIR$/shared/bases/Configs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/inc/header.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +171,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="8" />
-          <entry key="php" value="63" />
+          <entry key="php" value="70" />
           <entry key="rnc" value="1" />
           <entry key="svg" value="1" />
         </counts>
@@ -178,23 +179,23 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="8" />
-          <entry key="PHP" value="63" />
+          <entry key="PHP" value="70" />
           <entry key="RNG Compact" value="1" />
           <entry key="SVG" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="8" />
-          <entry key="php" value="14343" />
+          <entry key="dummy" value="10" />
+          <entry key="php" value="14364" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="PHP" value="14258" />
-          <entry key="PLAIN_TEXT" value="18" />
+          <entry key="PHP" value="14279" />
+          <entry key="PLAIN_TEXT" value="20" />
           <entry key="SQL" value="82" />
         </counts>
       </usages-collector>
@@ -210,19 +211,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/pages/appDetail.php">
+        <entry file="file://$PROJECT_DIR$/shared/bases/Const.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+            <state relative-caret-position="474">
+              <caret line="37" column="39" lean-forward="true" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shared/bases/Configs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shared/public/innerRoute.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shared/public/classes/Routable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="796">
+              <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/shared/public/classes/UserSVC.php">
+        <entry file="file://$PROJECT_DIR$/web/inc/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="643">
-              <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+            <state relative-caret-position="165">
+              <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -254,6 +282,7 @@
       <find>flag</find>
       <find>makeFile`</find>
       <find>url_path</find>
+      <find>appInfo</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -292,9 +321,9 @@
         <option value="$PROJECT_DIR$/web/pages/appDetail.php" />
         <option value="$PROJECT_DIR$/shared/public/classes/Routable.php" />
         <option value="$PROJECT_DIR$/shared/bases/Const.php" />
+        <option value="$PROJECT_DIR$/shared/public/classes/UserSVC.php" />
         <option value="$PROJECT_DIR$/shared/bases/Configs.php" />
         <option value="$PROJECT_DIR$/web/inc/header.php" />
-        <option value="$PROJECT_DIR$/shared/public/classes/UserSVC.php" />
       </list>
     </option>
   </component>
@@ -340,7 +369,48 @@
             <path>
               <item name="AppStore" type="b2602c69:ProjectViewProjectNode" />
               <item name="AppStore" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppStore" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="bases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppStore" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppStore" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppStore" type="462c0819:PsiDirectoryNode" />
               <item name="uploadFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppStore" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppStore" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppStore" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="inc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -352,7 +422,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="appDe&#9;FILE&#9;file:///usr/local/var/AppStore/web/pages/appDetail.php&#10;header&#9;FILE&#9;file:///usr/local/var/AppStore/web/inc/header.php&#10;Const&#9;FILE&#9;file:///usr/local/var/AppStore/shared/bases/Const.php&#10;config&#9;FILE&#9;file:///usr/local/var/AppStore/shared/bases/Configs.php&#10;popper&#9;null&#9;null&#10;footer&#9;FILE&#9;file:///usr/local/var/AppStore/web/inc/footer.php&#10;UserS&#9;FILE&#9;file:///usr/local/var/AppStore/shared/public/classes/UserSVC.php&#10;Cog&#9;FILE&#9;file:///usr/local/var/AppStore/web/fontawesome/svgs/solid/cog.svg&#10;index&#9;FILE&#9;file:///usr/local/var/AppStore/web/index.php&#10;userS&#9;FILE&#9;file:///usr/local/var/AppStore/shared/public/classes/UserSVC.php&#10;pV&#9;FILE&#9;file:///usr/local/var/AppStore/shared/modules/utils/PValidation.js&#10;foo&#9;FILE&#9;file:///usr/local/var/AppStore/web/inc/footer.php&#10;h&#9;FILE&#9;file:///usr/local/var/AppStore/web/inc/header.php&#10;pVali&#9;FILE&#9;file:///usr/local/var/AppStore/shared/modules/utils/PValidation.js&#10;boot&#9;FILE&#9;file:///usr/local/var/AppStore/web/js/bootstrap.min.js&#10;Ro&#9;FILE&#9;file:///usr/local/var/AppStore/shared/public/classes/Routable.php&#10;index.&#9;FILE&#9;file:///usr/local/var/AppStore/web/index.php&#10;rou&#9;FILE&#9;file:///usr/local/var/AppStore/shared/public/route.php&#10;User&#9;FILE&#9;file:///usr/local/var/eVote/shared/public/classes/UserSVC.php&#10;route&#9;FILE&#9;file://D:/workspace_integrated/WebstormProjects/eVote/shared/public/route.php&#10;join&#9;FILE&#9;file://D:/workspace_integrated/WebstormProjects/eVote/web/pages/join.php&#10;head&#9;FILE&#9;file://C:/Users/Administrator/AppData/Local/Temp/scp26252/var/www/html/eVote/web/inc/header.php&#10;const&#9;FILE&#9;file://D:/workspace_integrated/WebstormProjects/eVote/shared/bases/Const.php&#10;conta&#9;FILE&#9;file:///usr/local/var/eVote/web/contact.html" />
+    <property name="SearchEverywhereHistoryKey" value="appDe&#9;FILE&#9;file:///usr/local/var/AppStore/web/pages/appDetail.php&#10;footer&#9;FILE&#9;file:///usr/local/var/AppStore/web/inc/footer.php&#10;header&#9;FILE&#9;file:///usr/local/var/AppStore/web/inc/header.php&#10;Const&#9;FILE&#9;file:///usr/local/var/AppStore/shared/bases/Const.php&#10;config&#9;FILE&#9;file:///usr/local/var/AppStore/shared/bases/Configs.php&#10;popper&#9;null&#9;null&#10;UserS&#9;FILE&#9;file:///usr/local/var/AppStore/shared/public/classes/UserSVC.php&#10;Cog&#9;FILE&#9;file:///usr/local/var/AppStore/web/fontawesome/svgs/solid/cog.svg&#10;index&#9;FILE&#9;file:///usr/local/var/AppStore/web/index.php&#10;userS&#9;FILE&#9;file:///usr/local/var/AppStore/shared/public/classes/UserSVC.php&#10;pV&#9;FILE&#9;file:///usr/local/var/AppStore/shared/modules/utils/PValidation.js&#10;foo&#9;FILE&#9;file:///usr/local/var/AppStore/web/inc/footer.php&#10;h&#9;FILE&#9;file:///usr/local/var/AppStore/web/inc/header.php&#10;pVali&#9;FILE&#9;file:///usr/local/var/AppStore/shared/modules/utils/PValidation.js&#10;boot&#9;FILE&#9;file:///usr/local/var/AppStore/web/js/bootstrap.min.js&#10;Ro&#9;FILE&#9;file:///usr/local/var/AppStore/shared/public/classes/Routable.php&#10;index.&#9;FILE&#9;file:///usr/local/var/AppStore/web/index.php&#10;rou&#9;FILE&#9;file:///usr/local/var/AppStore/shared/public/route.php&#10;User&#9;FILE&#9;file:///usr/local/var/eVote/shared/public/classes/UserSVC.php&#10;route&#9;FILE&#9;file://D:/workspace_integrated/WebstormProjects/eVote/shared/public/route.php&#10;join&#9;FILE&#9;file://D:/workspace_integrated/WebstormProjects/eVote/web/pages/join.php&#10;head&#9;FILE&#9;file://C:/Users/Administrator/AppData/Local/Temp/scp26252/var/www/html/eVote/web/inc/header.php&#10;const&#9;FILE&#9;file://D:/workspace_integrated/WebstormProjects/eVote/shared/bases/Const.php&#10;conta&#9;FILE&#9;file:///usr/local/var/eVote/web/contact.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -413,12 +483,12 @@
       <workItem from="1541051751053" duration="1796000" />
       <workItem from="1541053800115" duration="16123000" />
       <workItem from="1541671243119" duration="3590000" />
-      <workItem from="1542086833266" duration="950000" />
+      <workItem from="1542086833266" duration="1700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64687000" />
+    <option name="totallyTimeSpent" value="65437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -443,8 +513,30 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13819444" />
+      <window_info anchor="right" id="Database" order="3" weight="0.13819444" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16111112" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32902467" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="12" weight="0.32902467" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13819444" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -453,7 +545,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../PickleBeaconSvc/shared/public/classes/UserSVC.php" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -550,9 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shared/bases/Base.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/shared/public/route.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -571,13 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/public/innerRoute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -609,34 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shared/public/classes/Routable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/bases/Configs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="118" column="31" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shared/bases/Const.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/inc/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/appDetail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -646,8 +699,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shared/public/classes/UserSVC.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        <state relative-caret-position="90">
+          <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/setter/Initializer.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/bases/Base.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/public/classes/Routable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="796">
+          <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/bases/Const.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="37" column="39" lean-forward="true" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/bases/Configs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/public/innerRoute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/inc/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
         </state>
       </provider>
     </entry>

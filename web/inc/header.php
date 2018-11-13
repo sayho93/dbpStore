@@ -1,15 +1,16 @@
 <?
     //TODO modify include PATH
     include_once $_SERVER["DOCUMENT_ROOT"] . "/shared/public/innerRoute.php";
-    $introPress = new innerRoute();
+    //include_once $_SERVER["DOCUMENT_ROOT"] . "/AppStore/shared/public/innerRoute.php";
+    $introProcess = new innerRoute();
 ?>
 
 <?
     $userSVC = new UserSVC($_REQUEST);
     $list = $userSVC->categoryList();
 
-    $CONST_URL_WEB = $introPress->PF_URL_PATH_WEB;
-    $CONST_URL_SHARED = $introPress->PF_URL_PATH_SHARED;
+    $CONST_URL_WEB = $introProcess->PF_URL_PATH_WEB;
+    $CONST_URL_SHARED = $introProcess->PF_URL_PATH_SHARED;
 
     $CONST_PROJECT_NAME = "AppStore";
     $CONST_TITLE_POSTFIX = " :: 깨끗하고 빠른 의견수렴 서비스";
